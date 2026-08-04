@@ -45,7 +45,15 @@
 
   <h2>Poster</h2>
   <ul>
-    <li><a href="poster.pdf">Poster (PDF)</a></li>
+    <!-- The ?v= stamp is a CACHE BUSTER and must be BUMPED every time poster.pdf
+         is replaced.  GitHub Pages serves this file with Cache-Control: max-age=600
+         and the filename can never change (the printed QR code resolves to this
+         page, and this page links to that exact name), so without a new query
+         string a phone that has already opened the poster keeps showing the old
+         PDF from its own cache no matter what the server holds.  A query string
+         is safe: it is a different cache key but the same static file.
+         Bump the date, do NOT rename poster.pdf. -->
+    <li><a href="poster.pdf?v=20260805">Poster (PDF)</a></li>
   </ul>
 
 </main>
